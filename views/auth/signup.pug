@@ -1,0 +1,33 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    <link rel="stylesheet" href="/css/addproduct.css">   
+    <link rel="stylesheet" href="/css/main.css">   
+    <link rel="stylesheet" href="/css/login.css">   
+    <link rel="stylesheet" href="/css/signup.css">   
+block content 
+        if (errorMessage)
+                div.userMessageContainer
+                    div.userMessage.errorMessage #{errorMessage}
+
+                    //- each message in errorMessage 
+                        //- div.userMessage.errorMessage #{message.msg}
+        if(!(isAuthenticated))                 
+            div.maincontainer 
+                form.form#form1(action="/signup" method="POST"  novalidate)
+                    div 
+                        h4 Eon Bikes
+                    div
+                        input(type="email",name="useremail", placeholder="email" required).inputfield
+                    div
+                        input(type="text",name="username", placeholder="UserName" required).inputfield
+                    //- div
+                    //-     input(type="text",name="lName", placeholder="Last Name" required).inputfield
+                    div
+                        input(type="password",name="userpassword", placeholder="Password" required).inputfield
+                    div    
+                        input(type="password" name="confuserpassword" placeholder="Confirm Password" required).inputfield 
+                    div
+                        input(type="hidden", name="_csrf" value=csrfToken)
+                        button#form-sub-btn(type="submit") Create an account
+        else    
+            h2 You are currently Logged In 

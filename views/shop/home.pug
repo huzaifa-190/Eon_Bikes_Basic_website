@@ -1,0 +1,54 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    link(rel="stylesheet", href="/css/shop.css")    
+    link(rel="stylesheet", href="/css/home.css")    
+block content 
+    h2  New Arrivals
+    //- <section id="home">
+    //-     <h1 class="hPrimary">Eon Bikes</h1>
+    //-     <p>Elevate your palate with our irresistible dishes, expertly crafted to culinary perfection, delivering a
+    //-         truly delectable journey of unforgettable flavors !</p>
+    //-     <button class="btn">Sign In</button>
+    //- </section>
+    div.container
+        each product in prods
+            div.productscontainer
+                //- if(product.description =='') 
+                //-     div.prddesc  #{product.title || deftitle} #{product.defdes}
+                //- else 
+                //-     div.prddesc  #{product.title || deftitle} #{product.description }
+                img(src= (product.imageURL || defurl) , alt="error loading image")
+                //- div.prdprice #{product.price || defprice}$
+                div.prddesc #{product.title}
+                
+                div.addtocartdiv 
+                    a(href=`/shop/products/`+product.id) Details 
+                    //- a(href=`/shop/products/`+product.id) Shop Now
+                    //- form.form(action="/shop/cart" method="post")
+                    //-     button(type="submit")#addtocartbtn  Add to cart
+                    //-     input(type="hidden", name="productId" value=``+product.id)
+    div#viewCollectionbtn
+        button.btn(type="button") 
+            a(href="/shop/products") View Collection 
+    h2  Inquire Us
+    section.contact-form
+      form(action="", method="post")
+        label(for="name") Name:
+        input(type="text", id="name", name="name", required)
+
+        label(for="email") Email:
+        input(type="email", id="email", name="email", required)
+
+        label(for="message") Message:
+        textarea(id="message", name="message", rows="4", required)
+
+        button.btn(type="button") Submit
+
+    footer
+      p © 2023 Eon Bikes. All rights reserved.
+      p Address: 123 Main St, Lahore, Pakistan
+      p Email: info@Eons.com
+                         
+    
+        
+           

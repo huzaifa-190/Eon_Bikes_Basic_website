@@ -1,0 +1,24 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    //- link(rel="stylesheet", href="/css/shop.css")    
+    <link rel="stylesheet" href="/css/addproduct.css">
+block content 
+    div.maincontainer 
+        form.form(action=`/admin/product/edit/`+product.id method="POST" )
+            input(type="hidden", name="_csrf" value=csrfToken)
+            div 
+                h4 Edit Product
+            div
+                input(type="text",name="title", placeholder="Title"  required value=``+product.title).inputfield
+            div    
+                input(type="text" name="price" placeholder="Price" required value=``+product.price).inputfield 
+            div    
+                input(type="text" name="imageurl" placeholder="ImageURL" value=``+product.imageURL).inputfield 
+            div
+                label(for="description" )#Labels Product Description  
+            div   
+                textarea(name="description" rows="10" value=``+product.description).inputfield#description 
+            div
+                button#form-sub-btn(type="submit") Confirm
+        
+           

@@ -1,0 +1,123 @@
+.body{
+    padding: 0%;
+    margin: 0%;
+    background-color: rgba(243, 240, 240, 0.74);
+}
+
+
+.products{
+    width: 100%;
+    display: flex;
+    /* flex-flow: column,wrap; */
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    background-color: white;
+    /* border: 3px solid red; */
+
+
+}
+
+
+.productContainer{
+
+    /* outline: 0.5px solid rgb(182, 182, 182); */
+    /* border: 3px solid red; */
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-flow: column, wrap; */
+    justify-content:space-evenly;
+    align-items: center
+    ;
+    margin: 0px;
+    padding: 10px;
+    width: 50%;
+    /* height: 500px; */
+
+} 
+
+.prdbox {
+
+    outline: 0.5px solid rgb(182, 182, 182);
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-flow: row, wrap; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 80px;
+    margin: 10px;
+    width: inherit;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px lightblue;
+    /* color: green; */
+    font-weight:500;
+}
+.prdbox:hover{
+    box-shadow: 10px 10px 7px rgb(7, 85, 65);
+    /* transform: scale(1.02); */
+    transition: 0.5s ease;
+}
+
+#left {
+    /* border: 2px solid blue; */
+    height: 40px;
+    
+}
+#center {
+    /* border: 2px solid blue; */
+    height: 40px;
+}
+#right {
+    /* border: 2px solid blue; */
+    height: 40px;
+    
+}
+
+
+
+.deleteItem{
+     height: 30px;
+    width: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform .5s;
+    
+}
+.deleteItem:hover{
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    height: 40px;
+    width: 50px;
+    outline: 1px solid gray;
+    
+    
+}
+
+#checkoutbtn{
+
+    border: 1.5px solid rgb(31, 121, 31) ;
+    height: 40px;
+    width: 320px;
+    border-radius: 4px;
+    color: rgb(31, 121, 31);
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+#checkoutbtn:hover{
+
+    background-color: rgb(7, 85, 65);
+    border: none;
+    color: white;
+    transition: 0.5s ;
+
+}
+

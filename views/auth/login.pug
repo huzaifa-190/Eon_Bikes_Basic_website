@@ -1,0 +1,41 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    <link rel="stylesheet" href="/css/addproduct.css">   
+    <link rel="stylesheet" href="/css/main.css">   
+    <link rel="stylesheet" href="/css/login.css">   
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/danger.css' rel='stylesheet'>
+block content 
+    if (errorMessage[0])
+        div.userMessageContainer
+            each message in errorMessage 
+                div.userMessage.errorMessage 
+                    <i class="gg-danger"></i>
+                    div.iSymbol #{message}
+                    
+
+    if(!(isAuthenticated))
+        div.maincontainer 
+            form.form(action="/login" method="POST" )
+                div 
+                    h4 Login to Eon Bikes
+                div
+                    input(type="text",name="username", placeholder="User Name" required).inputfield
+               
+                div    
+                    input(type="password" name="password" placeholder="password" required).inputfield 
+                div#divremembermecheckbox     
+                    input(type="checkbox", name="rememberme"  )#remembermecheckbox
+                    label(for="remembermecheckbox" ) Remember me?
+                
+                
+            
+                div
+                    input(type="hidden", name="_csrf" value=csrfToken)
+                    button#form-sub-btn(type="submit") Log In
+                div.alink     
+                    a(href="/resetPassword") Reset Pasword? 
+                div.alink#dont    
+                        p Don't have an account ?   
+                        a(href="/signup") Sign Up 
+    else    
+        h2 You are currently Logged In 

@@ -1,0 +1,72 @@
+.maincontainer{
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(243, 240, 240, 0.74);
+}
+        .form {
+            display: flex;
+            align-items: center;
+            flex-flow: column wrap;
+            margin: 30px ;
+            padding: 10px 0px;
+            width: 340px;
+            height: 440px;
+            background-color: white;
+            outline: 0.5px solid rgb(182, 182, 182);
+            border-radius: 10px;
+            user-select: none;
+
+        }
+
+        .form div {
+            margin: 0px;
+        }
+        div h4 {
+            margin: 13px 0px 18px 0px;
+            color: green;
+            font-weight:bold;
+        }
+        .inputfield {
+
+            width: 280px ;
+            height: 27px;
+            border-radius: 5px;
+            margin: 10px 0px;
+            /* border: 1.5px solid rgb(5, 75, 42); */
+            border: 0.2px solid grey;
+            padding: 5px 0px 5px 15px ;
+        }
+        .inputfield:focus {
+            outline-color: rgb(5, 75, 42);
+            /* border: none; */
+            box-shadow: 5px 5px 6px lightblue;
+        }
+
+        #Labels{
+            margin: 10px 10px;
+            color: green;
+        }
+        #form-sub-btn {
+            margin: 10px;
+            background-color: white;
+            cursor: pointer;
+            color: rgb(17, 131, 78);
+            border-radius: 8px;
+            border: 2px solid rgb(10, 143, 81);
+            height: 35px;
+            width: 280px;
+            align-items: center;
+            align-content: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        #form-sub-btn:hover {
+            border: none;
+            color: rgb(255, 255, 255);
+            transition: 0.4s;
+        }

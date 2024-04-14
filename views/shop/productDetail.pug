@@ -1,0 +1,20 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    link(rel="stylesheet", href="/css/shop.css")    
+block content 
+    h2  SigIn To Buy
+    hr
+    div.container 
+            div.productscontainer
+                img(src= (product.imageURL || defurl) , alt="error loading image")
+                if(product.description =='') 
+                    div.prddesc  #{product.title || deftitle} #{product.defdes}
+                else 
+                    div.prddesc  #{product.title || deftitle} #{product.description }
+                div.prdprice #{product.price || defprice} $
+                
+                if(isAuthenticated)
+                    form(action="/shop/cart" method="post").form
+                        input(type="hidden", name="_csrf" value=csrfToken)
+                        button#form-sub-btn(type="submit") ADD to cart
+                        input(type="hidden", name="productId" value=``+product.id)

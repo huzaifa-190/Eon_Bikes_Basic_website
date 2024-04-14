@@ -1,0 +1,21 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    link(rel="stylesheet", href="/css/shop.css")    
+block content 
+    h2  Live Stock
+    div.container
+        each product in prods
+            div.productscontainer
+                img(src= (product.imageURL || defurl) , alt="error loading image")
+                //- div.prdprice #{product.price || defprice}$
+                if(product.description =='') 
+                    div.prddesc  #{product.title || deftitle} #{product.defdes}
+                else 
+                    div.prddesc  #{product.title || deftitle} #{product.description }
+                div.addtocartdiv 
+                    a(href=`/admin/product/edit/`+product.id) Edit
+                    a(href=`/admin/product/delete/`+product.id) Delete
+                    //- button#addtocartbtn Delete
+    
+        
+           

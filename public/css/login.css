@@ -1,0 +1,66 @@
+.maincontainer{
+
+    /* background-image: url('./bg2.jpg');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-attachment:scroll; */
+}
+.alink {
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    /* border:  3px solid red; */
+    width: 100%;
+}
+.alink  p{
+    /* border:  1px solid black; */
+    color: rgb(8, 109, 75);
+    font-size: 0.8rem;
+}
+.alink  a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    /* border: 0.1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-top: 18px;
+    color: gray;
+}
+.alink  a:hover{
+    color:  green;
+    transform: scale(1.02);
+}
+
+#dont {
+
+    position: relative;
+    top: 100px;
+}
+.errorMessage{
+    /* border: 2px solid red; */
+    background-color: 	 #ffcccc;
+    color: rgb(158, 22, 22);
+
+    
+}
+
+/* i symbol in the error message */
+.iSymbol{ 
+    margin-left: 5px;
+}
+
+#divremembermecheckbox {
+    
+    display:block;
+    position:relative;
+    right: 80px;
+}
+#divremembermecheckbox label{
+    font-size: 0.8rem;
+    color: rgb(7, 92, 85);
+    
+}

@@ -1,0 +1,63 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pagetitle}
+
+        //- Favicon
+        <link rel="icon" type="image/x-icon" href="/images/faviconE.jp  g">
+
+        //- FONTS
+
+
+        //- CSS
+        link(rel="stylesheet", href="/css/shop.css")
+        link(rel="stylesheet", href="/css/main.css")
+        script(src=".../public/script.js") 
+        //- <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shopping-cart.css' rel='stylesheet'>
+
+        //- ONLINE RESOURCES
+        <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shopping-bag.css' rel='stylesheet'>
+        block styles
+    body 
+        header.header 
+            .left 
+                img(src="./logo.jpeg" , alt="error loading image")
+            .mid
+                nav.navbar
+                    ul.navbarul
+                        li.liofulinnavbar
+                            a(href="/shop" class=(path==='/shop/home' ? 'active' :'')) HOME
+                        li.liofulinnavbar
+                            a(href="/shop/products" class=(path==='/shop/products' ? 'active' :'')) SHOP
+                        //- li.liofulinnavbar
+                        //-     a(href="/shop/contactUs" class=(path==='/shop/contactUs' ? 'active' :'')) JoinUs 
+                        //- li.liofulinnavbar
+                        //-     a(href="/shop/products" class=(path==='/shop/products' ? 'active' :'')) More 
+                        if(isAuthenticated)
+                            li.liofulinnavbar
+                                a(href="/admin/Products" class=(path==='/admin/Products' ? 'active' :'')) AdminProducts
+                            li.liofulinnavbar
+                                a(href="/admin/addproduct" class=(path==='/admin/addproduct' ? 'active' :'')) ADD Products
+                            li.liofulinnavbar
+                                a(href="/shop/orders" class=(path==='/shop/orders' ? 'active' :'')) ORDERS
+            .right 
+                //- <i class="gg-shopping-cart"  class=(path==='/shop/cart' ? 'active' :'') > </i>
+                ul.navbarul 
+                    if(!isAuthenticated)
+                        li.liofulinnavbar 
+                            a(href="/login" class=(path==='/login' ? 'active' :'') ) | sign in
+                        //- li.liofulinnavbar 
+                        //-     a(href="/signup" class=(path==='/signup' ? 'active' :'') ) SignUp
+                    //- li.liofulinnavbar 
+                    //-     a(href="/logout" class=(path==='/logout' ? 'active' :'' method='post') ) Signout
+                    if(isAuthenticated)
+                        li.liofulinnavbar   
+                            form(action="/logout" method="POST" )
+                                input(type="hidden", name="_csrf" value=csrfToken)
+                                button.signoutbtn(type="submit") SignOut
+                    if(isAuthenticated)
+                        a(href="/shop/cart" class=(path==='/shop/cart' ? 'active' :'')).liofulinnavbar <i class="gg-shopping-bag"></i>
+        section.mainsection
+            block content

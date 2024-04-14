@@ -1,0 +1,33 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    link(rel="stylesheet", href="/css/shop.css")    
+block content 
+    h2  OUR COLLECTION
+    div.container
+        //- -var n = 0;
+        //- ul
+        //- while n < 5
+        //-     li= n++
+        each product in prods
+            div.productscontainer 
+                img(src= (product.imageURL || defurl) , alt="error loading image")
+                //- div.prdprice #{product.price || defprice}$
+                if(product.description =='') 
+                    div.prddesc  #{product.title || deftitle} #{product.defdes}
+                else 
+                    div.prddesc  #{product.title || deftitle} #{product.description }
+                div.addtocartdiv 
+                    a(href=`/shop/products/`+product.id) Details 
+                    if(isAuthenticated)
+                        form(action="/shop/cart" method="post").form
+                            input(type="hidden", name="_csrf" value=csrfToken)
+                            button#form-sub-btn(type="submit") Buy Now
+                            input(type="hidden", name="productId" value=``+product.id)
+                    //- a(href=`/shop/products/`+product.id) Shop Now
+                    //- form.form(action="/shop/cart" method="post")
+                    //-     button(type="submit")#addtocartbtn  Add to cart
+                    //-     input(type="hidden", name="productId" value=``+product.id)
+                         
+    
+        
+           

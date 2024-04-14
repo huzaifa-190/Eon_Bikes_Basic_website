@@ -1,0 +1,180 @@
+*{
+        font-family:  sans-serif;
+}
+
+.body{
+        /* background-color: rgba(243, 240, 240, 0.74); */
+        background-color: red;
+        /* margin: 0px;
+        padding: 0px; */
+}
+
+.header {
+    /* border:  3px solid red; */
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(8, 41, 25);
+    /* position:fixed */
+    flex-wrap: wrap;
+    height: 80px;
+    /* border: 2px solid red; */
+
+
+
+}
+.navbar{
+    /* margin: 0px;
+    padding: 0px; */
+    display: flex;
+    /* width: 100%; */
+    justify-content: center;
+    /* align-items: center; */
+    /* position: fixed; */
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+
+}
+
+.left{
+    display: flex;
+    width: 20%;
+    height: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* border: 3px solid white; */
+}
+
+.left img{
+    height: 50px;
+    width: 50px;
+    /* border: 1px solid yellow; */
+}
+.mid {
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid blue */
+}
+.right{
+    height: 100%;
+    display: flex;
+    /* width: 20%; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    flex-wrap: wrap;
+
+    /* top: 10px */
+}
+.right a{
+
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+}
+.right a:hover{
+    color: rgb(185, 187, 70);
+    transition: 0.5s;
+    /* transform: scale(1.03); */
+}
+.right a.active{
+    color: rgb(251, 255, 0);
+}
+.navbarul {
+    
+    display: flex;
+    /* border: 3px solid green ; */
+    /* align-items: center; */
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap ;
+
+}
+
+.liofulinnavbar{
+    /* border: 2px solid green; */
+    margin : 3px 15px;
+    
+    font-size: medium;
+    list-style: none;
+    
+}
+
+.liofulinnavbar a{
+    
+    text-decoration: none;
+    font-size: medium;
+    font-weight: lighter;
+    color: white;
+}
+.liofulinnavbar a:hover{
+    color: rgb(185, 187, 70);
+    /* transform: scale(1.1); */
+    /* transition: 0.5s; */
+}
+.liofulinnavbar a.active{
+    color: rgb(251, 255, 0);
+    /* border-bottom: 3px solid rgb(212, 228, 70); */
+}
+
+.signoutbtn{
+    
+  
+    height: 30px;
+    /* border: 1px solid white; */
+    cursor: pointer;
+    font-size: 0.9rem;
+    border: 2px solid white;
+    border-radius: 4px;
+    
+    background-color: transparent;
+    color: white;
+    
+    /* border: none; */
+    /* padding: 0px; */
+    /* color:  white; */
+    /* font-size: medium; */
+
+
+}
+
+.signoutbtn:hover{
+   
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 92, 57);
+    transition: 0.4s;
+   
+}
+.userMessageContainer{
+    /* width: 90%; */
+    /* border: 2px solid red; */
+    /* margin: 5px; */
+    
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userMessage{
+    width: 100%;
+    height: 50px;
+
+    font-weight: lighter;
+    font-size: small;
+    color: rgb(3, 90, 76);
+    padding: 3px;
+    background-color: rgb(250, 250, 137);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

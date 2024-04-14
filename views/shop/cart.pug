@@ -1,0 +1,27 @@
+extends ../layouts/main-layout.pug 
+block styles 
+    link(rel="stylesheet", href="/css/cart.css") 
+    script(src=".../public/script.js")     
+block content
+    h2 Your Cart
+    div.products
+        div.productContainer 
+            if (prods.length ===0)
+                h1 Empty 
+            else
+                each p in prods 
+                    div.prdbox 
+                        div#left #{p.title}
+                        div#center Quantity: #{p.cartItem.qty} 
+                        div#right  
+                            a(href="cart/deleteItem/"+p.id).deleteItem ❌ 
+                            //- a(href="cart/deleteItem").deleteItem ❌ 
+        //- div.balance
+        //-     h4 balance:
+            
+            //- div &nbsp&nbsp Total : #{balance} 
+        if (!(prods.length ===0))
+            form(action="/shop/createOrder" method="post").form
+                input(type="hidden", name="_csrf" value=csrfToken)
+                button#checkoutbtn(type="submit") Check Out
+                            //-      input(type="hidden", name="productId" value=``+product.id)
